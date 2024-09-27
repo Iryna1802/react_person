@@ -1,11 +1,15 @@
 function doMarried(sex, partner) {
+  let str = '';
+
   if (sex === 'm') {
-    return `${partner} is my wife`;
+    str = `${partner} is my wife`;
   }
 
   if (sex === 'f') {
-    return `${partner} is my husband`;
+    str = `${partner} is my husband`;
   }
+
+  return str;
 }
 
 export const Person = ({ person }) => (
@@ -17,9 +21,8 @@ export const Person = ({ person }) => (
 
       <p className="Person__partner">
         {!person.isMarried
-          ? 'I am not married' :
-          doMarried(person.sex, person.partnerName)
-        }
+          ? 'I am not married'
+          : doMarried(person.sex, person.partnerName)}
       </p>
     </section>
   </div>
